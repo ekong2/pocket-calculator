@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='CalculatorApp'>
     <head>
     	<title>My Pocket Calculator</title>
     </head>
     <body>
-        <div ng-app="CalculatorApp">
-        	<div ng-controller="CalculatorController">
-        	</div>
-        </div>
+        <div ng-view></div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-        <script src="">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+        <script src="app/calculator/calculator.js"></script>
+        <script src="app/app.js"></script>
     </body>
 </html>
