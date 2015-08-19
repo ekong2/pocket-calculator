@@ -14,6 +14,9 @@ angular.module('CalculatorApp.calculator', [])
   //Cached right operand
   $scope.repeatValue = null;
 
+  //Boolean to determine if clear button was hit recently
+  $scope.wasClearedRecently = false;
+
   $scope.currentDisplay = "0";
   $scope.currentOperation = null;
 
@@ -23,8 +26,9 @@ angular.module('CalculatorApp.calculator', [])
   	if ($scope.currentDisplay === "0" && $scope.resetScreen){
   		$scope.repeatValue = null;
   		$scope.savedNumber = null;
+      $scope.currentOperation = null;
   	}
-
+    $scope.wasClearedRecently = true;
   	//Clear the current values
   	$scope.currentDisplay = "0";
   	$scope.resetScreen = true;
@@ -49,7 +53,7 @@ angular.module('CalculatorApp.calculator', [])
   }
 
   $scope.factorial = function(){
-  	$currentDisplay = MathService.factorial(+$scope.currentDisplay);
+  	$scope.currentDisplay = MathService.factorial(+$scope.currentDisplay);
   }
 
   $scope.operationClicked = function(operation){
@@ -81,9 +85,16 @@ angular.module('CalculatorApp.calculator', [])
   $scope.equalsClicked = function(){
 
   	//If we repeatedly click on equals, use cached value
-  	if ($scope.repeatValue !== null){
+  	if ($scope.repeatValue !== null && !$scope.wasClearedRecently){
   		$scope.calculate($scope.savedNumber, $scope.repeatValue, $scope.currentOperation);
-  	} else {
+
+    //If clear button was used recently, check if you're now replacing the left operand
+  	} else if ($scope.repeatValue !== null && $scope.wasClearedRecently){
+      $scope.wasClearedRecently = false;
+      $scope.calculate($scope.currentDisplay, $scope.repeatValue, $scope.currentOperation);
+
+    //Default case of adding two numbers
+    } else {
   		$scope.calculate($scope.savedNumber, $scope.currentDisplay, $scope.currentOperation);
   	}
   }

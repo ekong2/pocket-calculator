@@ -1,5 +1,12 @@
-#calculatorContainer{
+body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.mainTitle{
+	text-align: center;
+}
+
+#calculatorContainer{
 	width:300px;
 	height:200px;
 	position:absolute;
@@ -62,11 +69,20 @@
 }
 
 .screen{
+	float: left;
+	width: 300px;
+	height: 35px;
+	font-size: 35px;
 	text-align: right;
 	color: white;
 	background-color: black;
+	margin: 1% 0 1% 1.6%;
 }
 
 .hued{
 	background-color: #CCC7C7;
+}
+
+.selected{
+	background-color: #44A9FB; 
 }
