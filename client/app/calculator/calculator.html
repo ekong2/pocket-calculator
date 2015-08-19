@@ -1,35 +1,48 @@
 <div id="calculatorContainer">
-
 	<div class="section group"> <!-- Main Display-->
-		<div ng-click="numberClicked(4)" class="col c4of4">{{currentDisplay}}</div>
+		<div ng-click="numberClicked(4)" class="col c4of4 screen">{{currentDisplay}}</div>
 	</div>
 	<div class="section group"> <!-- Display the 1st row of operations-->
-		<div ng-click="reset(true)" class="col c1of4">AC</div>
-		<div ng-click="negativePositiveSwitch()" class="col c1of4">+/-</div>
-		<div ng-click="percentage()" class="col c1of4">%</div>
-		<div ng-click="operationClicked('/')" class="col c1of4">/</div>
+		<div ng-click="reset()" class="col c1of4 hued">{{currentDisplay === "0" && resetScreen ? 'AC':'C'}}</div>
+		<div ng-click="negativePositiveSwitch()" class="col c1of4 hued">+/-</div>
+		<div ng-click="percentage()" class="col c1of4 hued">%</div>
+		<div ng-click="operationClicked('/')" class="col c1of4 operation">/</div>
 	</div>
 	<div class="section group"> <!-- Display the 1st row-->
 		<div ng-click="numberClicked('7')" class="col c1of4">7</div>
 		<div ng-click="numberClicked('8')" class="col c1of4">8</div>
 		<div ng-click="numberClicked('9')" class="col c1of4">9</div>
-		<div ng-click="operationClicked('x')" class="col c1of4">x</div>
+		<div ng-click="operationClicked('x')" class="col c1of4 operation">x</div>
 	</div>
 	<div class="section group"> <!-- Display the 2nd row -->
 		<div ng-click="numberClicked('4')" class="col c1of4">4</div>
 		<div ng-click="numberClicked('5')" class="col c1of4">5</div>
 		<div ng-click="numberClicked('6')" class="col c1of4">6</div>
-		<div ng-click="operationClicked('-')" class="col c1of4">-</div>
+		<div ng-click="operationClicked('-')" class="col c1of4 operation">-</div>
 	</div>
 	<div class="section group"> <!-- Display the 3rd row -->
 		<div ng-click="numberClicked('1')" class="col c1of4">1</div>
 		<div ng-click="numberClicked('2')" class="col c1of4">2</div>
 		<div ng-click="numberClicked('3')" class="col c1of4">3</div>
-		<div ng-click="operationClicked('+')" class="col c1of4">+</div>
+		<div ng-click="operationClicked('+')" class="col c1of4 operation">+</div>
 	</div>
 	<div class="section group"> <!-- Display the last row -->
 		<div ng-click="numberClicked('0')" class="col c2of4">0</div>
 		<div ng-click="numberClicked('.')" class="col c1of4">.</div>
-		<div ng-click="equalsClicked()" class="col c1of4">=</div>
+		<div ng-click="equalsClicked()" class="col c1of4 operation">=</div>
+	</div>
+
+	<!--SCIENTIFIC CALCULATOR ROWS-->
+	<div class="section group"> <!-- Display the 1st row of operations-->
+		<div ng-click="raiseToThePowerOf('2')" class="col c1of4 hued">x<sup>2</sup></div>
+		<div ng-click="raiseToThePowerOf('3')" class="col c1of4 hued">x<sup>3</sup></div>
+		<div ng-click="operationClicked('^')" class="col c1of4 hued">x<sup>y</sup></div>
+		<div ng-click="factorial()" class="col c1of4 hued">x!</div>
+	</div>
+	<div class="section group"> <!-- Display the 1st row-->
+		<div ng-click="divideByX()" class="col c1of4 hued">1/x</div>
+		<div ng-click="raiseToThePowerOf('0.5')" class="col c1of4 hued">x<sup>1/2</sup></div>
+		<div ng-click="raiseToThePowerOf('0.333333')" class="col c1of4 hued">x<sup>1/3</sup></div>
+		<div ng-click="operationClicked('^*')" class="col c1of4 hued">x<sup>1/y</sup></div>
 	</div>
 </div>

@@ -1,3 +1,13 @@
+#calculatorContainer{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	width:300px;
+	height:200px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-100px 0 0 -150px;
+}
+
 .section{
 	clear:both;
 	padding:0;
@@ -18,7 +28,7 @@
 }
 
 .col:hover{
-	background-color:#f0f0ff
+	background-color:#B9B9E0
 }
 
 .group:before,.group:after{
@@ -44,4 +54,19 @@
 
 .c3of4{
 	width:100%
+}
+
+.operation{
+	color: white;
+	background-color: orange;
+}
+
+.screen{
+	text-align: right;
+	color: white;
+	background-color: black;
+}
+
+.hued{
+	background-color: #CCC7C7;
 }
