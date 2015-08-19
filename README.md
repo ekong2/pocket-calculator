@@ -6,3 +6,7 @@ Pocket calculator in Angular
 
     npm install
     gulp
+
+##Additional notes
+* test cases
+* additional scientific calculator operations
