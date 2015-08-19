@@ -1,0 +1,47 @@
+.section{
+	clear:both;
+	padding:0;
+	margin:0
+}
+
+.col{
+	background-color:#f4f4f4;
+	height:20px;
+	text-align:center;
+	display:block;
+	float:left;
+	margin:1% 0 1% 1.6%
+}
+
+.col:first-child{
+	margin-left:0
+}
+
+.col:hover{
+	background-color:#f0f0ff
+}
+
+.group:before,.group:after{
+	content:"";
+	display:table
+}
+
+.group:after{
+	clear:both
+}
+
+.c1of4{
+	width:23.8%
+}
+
+.c2of4{
+	width:49.2%
+}
+
+.c3of4{
+	width:74.6%
+}
+
+.c3of4{
+	width:100%
+}

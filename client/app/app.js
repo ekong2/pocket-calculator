@@ -1,4 +1,5 @@
 angular.module('CalculatorApp', [
+  'CalculatorApp.mathServices',
   'CalculatorApp.calculator',
   'ngRoute'
   ])

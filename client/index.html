@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html ng-app='CalculatorApp'>
     <head>
+        <meta charset="utf-8" />
     	<title>My Pocket Calculator</title>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     </head>
     <body>
         <div ng-view></div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
         <script src="app/calculator/calculator.js"></script>
+        <script src="app/calculator/mathServices.js"></script>
         <script src="app/app.js"></script>
     </body>
 </html>
